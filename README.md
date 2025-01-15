@@ -50,3 +50,6 @@ The core of the project is built using FastAPI, which provides a fast and easy w
 4. Testing is done in an isolated environment using an in-memory database to ensure clean tests and prevent side effects.
 
 This project is designed to demonstrate a simple and clean structure for backend APIs, focusing on JWT authentication, CRUD operations, and database interactions with FastAPI.
+
+![Alt Text](./ss.png)
+
