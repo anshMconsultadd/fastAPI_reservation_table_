@@ -1,5 +1,5 @@
 from app.database import Base, engine, SessionLocal
-from app.models import User
+from app.models import User, Table
 from app.auth import get_password_hash
 
 db = SessionLocal()
