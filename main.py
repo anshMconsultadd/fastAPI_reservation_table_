@@ -4,9 +4,11 @@ from app.routes.admin import router as admin_router
 from app.routes.user import router as user_router
 
 app = FastAPI()
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
 
 app.include_router(auth_router, tags=["Authentication"])
 app.include_router(admin_router, prefix="/admin", tags=["Admin Routes"])
