@@ -10,7 +10,7 @@ import pytest
 
 @pytest.fixture(scope="module")
 def db():
-    # Create the test database
+    
     Base.metadata.create_all(bind=engine)
     db_session = SessionLocal()
     yield db_session
