@@ -1,6 +1,6 @@
 from fastapi.testclient import TestClient
 from main import app
-from app.models import User
+# from app.models import User
 from app.auth import get_password_hash
 from app.database import SessionLocal, engine, Base
 from sqlalchemy.orm import Session

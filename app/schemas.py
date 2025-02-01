@@ -5,6 +5,10 @@ class UserCreate(BaseModel):
     username: str
     password: str
 
+
+class RegiterUser(UserCreate):
+    role: str
+    
 class TableCreate(BaseModel):
     capacity: int
 

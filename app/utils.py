@@ -1,8 +1,8 @@
 from fastapi import HTTPException, Depends
 from jose import jwt, JWTError
-from app.models import User
+# from app.models import User
 from sqlalchemy.orm import Session
-from app.database import get_db
+from app.database import get_db,User
 from fastapi import status
 from app.config import SECRET_KEY, ALGORITHM
 from app.auth import oauth2_scheme
