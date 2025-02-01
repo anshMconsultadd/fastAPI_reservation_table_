@@ -16,5 +16,7 @@ def get_db():
     finally:
         db.close()
 
-
-Base.metadata.create_all(bind=engine)
+def init_db():
+    """Ensure database tables are created."""
+    from app.models import User, Table  # Import models before creating tables
+    Base.metadata.create_all(bind=engine)
