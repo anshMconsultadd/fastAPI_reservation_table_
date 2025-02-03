@@ -22,3 +22,5 @@ def read_root():
 app.include_router(auth_router, tags=["Authentication"])
 app.include_router(admin_router, prefix="/admin", tags=["Admin Routes"])
 app.include_router(user_router, prefix="/user", tags=["User Routes"])
+
+# efneifnwifnmwef 
