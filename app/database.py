@@ -3,8 +3,18 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
 
-SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:consultadd@localhost:3306/hotel_table_booking"
+# SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:consultadd@localhost:3306/hotel_table_booking"
 
+# SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:consultadd@host.docker.internal:3306/hotel_table_booking"
+import os
+
+# Check if running inside Docker (by checking for an environment variable)
+IS_DOCKER = os.getenv("IS_DOCKER", "false").lower() == "true"
+
+if IS_DOCKER:
+    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:consultadd@host.docker.internal:3306/hotel_table_booking"
+else:
+    SQLALCHEMY_DATABASE_URL = "mysql+pymysql://root:consultadd@localhost:3306/hotel_table_booking"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
